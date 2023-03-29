@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    restart: always
+
+    environment:
+      POSTGRES_DB: data
+      POSTGRES_USER: elmir
+      POSTGRES_PASSWORD: 123
+
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
