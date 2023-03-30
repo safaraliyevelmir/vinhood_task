@@ -4,11 +4,10 @@ services:
   db:
     image: postgres
     restart: always
+    env_file: .env
 
     environment:
-      POSTGRES_DB: data
-      POSTGRES_USER: elmir
-      POSTGRES_PASSWORD: 123
+      - POSTGRES_HOST_AUTH_METHOD=trust
 
   web:
     build: .

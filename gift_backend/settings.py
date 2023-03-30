@@ -135,7 +135,7 @@ else:
             'USER': config('POSTGRES_USER',cast=str),
             'PASSWORD': config('POSTGRES_PASSWORD',cast=str),
             'HOST': 'localhost',
-            'PORT': 'db',
+            'PORT': '5432',
         }
     }
 
